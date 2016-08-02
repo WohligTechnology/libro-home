@@ -10,12 +10,33 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 
-  $scope.mySlides = [
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
-  ];
+  // $scope.mySlides = [
+  //   'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
+  //   'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
+  //   'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
+  //   'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
+  // ];
+  // $scope.swiper = {};
+  // $scope.next = function() {
+  //   $scope.swiper.slideNext();
+  // };
+  // $scope.onReadySwiper = function(swiper) {
+  //   console.log('onReadySwiper');
+  //   swiper.on('slideChangeStart', function() {
+  //     console.log('slideChangeStart');
+  //   });
+  // };
+  setTimeout(function() {
+    var swiper = new Swiper('.swiper-container', {
+      pagination: '.swiper-pagination',
+      direction: 'vertical',
+      slidesPerView: 1,
+      paginationClickable: true,
+      spaceBetween: 30,
+      mousewheelControl: true
+    });
+  }, 100);
+
 })
 
 .controller('headerctrl', function($scope, TemplateService) {

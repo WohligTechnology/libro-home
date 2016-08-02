@@ -1,8 +1,65 @@
-/*Start writing sass here*/
-@import "../bourbon/bourbon";
-@import "../bower_components/bootstrap/dist/css/bootstrap.min.css";
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 @import "../bower_components/flexslider/flexslider.css";
-@import "../bower_components/fontawesome/css/font-awesome.min.css";
+@import "../bower_components/font-awesome/css/font-awesome.min.css";
+@import "../bower_components/fancyBox/source/jquery.fancybox.css";
+@import "../bower_components/swiper/dist/css/swiper.min.css";
+@import "../bower_components/smart-app-banner/smart-app-banner.css";
+/* Bootstrap Variables Goes Here */
+$brand-primary: #0d9dff !default;
+$brand-success: #84ce3c !default;
+$brand-warning: #ffec39 !default;
+$brand-danger: #fc483f !default;
+$brand-info: #000072 !default;
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
+  padding-top: 70px;
+}
+
+img.loading {
+  text-align: center;
+  opacity: 1;
+  width: 32px !important;
+  height: auto;
+}
+
+img {
+  opacity: 0;
+  @include transition(all 300ms ease);
+}
+
+img.doneLoading {
+  opacity: 1;
+}
+
+nav li:hover .dropdown-menu {
+  display: block;
+}
+
+.btn,
+a {
+  cursor: pointer;
+  @include transition(all ease 300ms);
+}
+//bootstrap forms
+
+.btn,
+.form-control,
+.input-group-lg > .form-control,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn,
+.input-lg {
+  border-radius: 0;
+  @include box-shadow(none);
+}
+
+.form-control:focus {
+  border-color: $brand-primary;
+  outline: 0;
+  @include box-shadow(none);
+}
 
 body,
 html {
@@ -19,48 +76,29 @@ body {
   padding: 0;
 }
 
+.myslides {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  border-bottom: 1px solid gray;
+}
+
 .swiper-container {
   width: 100%;
   height: 100%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center;
 }
-
-img.loading {
-  text-align: center;
-  opacity: 1;
-  width: 32px !important;
-  height: auto;
-}
-
-img {
-  opacity: 0;
-  //    .transition(all 1s ease);
-}
-
-img.doneLoading {
-  opacity: 1;
-}
-
-nav li:hover .dropdown-menu {
-  display: block;
-}
+/* Start writing sass here */
+@import "fancybox-override";

@@ -14,10 +14,10 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
   $httpProvider.defaults.withCredentials = true;
   $stateProvider
     .state('home', {
-    url: "/",
-    templateUrl: "views/template.html",
-    controller: 'HomeCtrl'
-  });
+      url: "/",
+      templateUrl: "views/template.html",
+      controller: 'HomeCtrl'
+    });
   $urlRouterProvider.otherwise("/");
   $locationProvider.html5Mode(isproduction);
 });
@@ -44,33 +44,48 @@ firstapp.directive('img', function($compile, $parse) {
 });
 
 firstapp.directive('fancyboxBox', function($document) {
-    return {
-        restrict: 'EA',
-        replace: false,
-        link: function(scope, element, attr) {
-            var $element = $(element);
-            var target;
-            if (attr.rel) {
-               target = $("[rel='" + attr.rel + "']");
-            } else {
-                target = element;
-            }
+  return {
+    restrict: 'EA',
+    replace: false,
+    link: function(scope, element, attr) {
+      var $element = $(element);
+      var target;
+      if (attr.rel) {
+        target = $("[rel='" + attr.rel + "']");
+      } else {
+        target = element;
+      }
 
-            target.fancybox({
-                openEffect: 'fade',
-                closeEffect: 'fade',
-                closeBtn: true,
-                helpers: {
-                    media: {}
-                }
-            });
+      target.fancybox({
+        openEffect: 'fade',
+        closeEffect: 'fade',
+        closeBtn: true,
+        helpers: {
+          media: {}
         }
-    };
+      });
+    }
+  };
 });
 
 
-firstapp.config(function ($translateProvider) {
+firstapp.config(function($translateProvider) {
   $translateProvider.translations('en', LanguageEnglish);
   $translateProvider.translations('hi', LanguageHindi);
   $translateProvider.preferredLanguage('en');
+});
+
+firstapp.directive('autoHeight', function($compile, $parse) {
+  return {
+    restrict: 'EA',
+    replace: false,
+    link: function($scope, element, attrs) {
+      var $element = $(element);
+      var windowHeight = $(window).height();
+      var addHeight = function() {
+        $element.css("min-height", windowHeight);
+      };
+      addHeight();
+    }
+  };
 });
