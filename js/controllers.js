@@ -10,22 +10,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 
-  // $scope.mySlides = [
-  //   'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
-  //   'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
-  //   'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
-  //   'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
-  // ];
-  // $scope.swiper = {};
-  // $scope.next = function() {
-  //   $scope.swiper.slideNext();
-  // };
-  // $scope.onReadySwiper = function(swiper) {
-  //   console.log('onReadySwiper');
-  //   swiper.on('slideChangeStart', function() {
-  //     console.log('slideChangeStart');
-  //   });
-  // };
+  // $scope.homeswipers = [{
+  //   image: 'img/slide/2.jpg',
+  // }, {
+  //   image: 'img/slide/2.jpg',
+  // }, {
+  //   image: 'img/slide/2.jpg',
+  // }, ];
   setTimeout(function() {
     var swiper = new Swiper('.swiper-container', {
       pagination: '.swiper-pagination',
@@ -35,7 +26,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       spaceBetween: 30,
       mousewheelControl: true
     });
-  }, 100);
+  }, 500);
 
 })
 

@@ -13,9 +13,30 @@ $brand-warning: #ffec39 !default;
 $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@font-face {
+  font-family: "Facile Sans";
+  src: url("../fonts/.otf");
+  src: url("../fonts/Facile-Sans.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 
-body {
-  padding-top: 70px;
+body,
+html {
+  position: relative;
+  height: 100%;
+}
+
+.footer,
+.header {
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.footer {
+  bottom: 0;
 }
 
 img.loading {
@@ -61,19 +82,12 @@ a {
   @include box-shadow(none);
 }
 
-body,
-html {
-  position: relative;
-  height: 100%;
+.uppercase {
+  text-transform: uppercase;
 }
 
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
+.fnt-26 {
+  font-size: 26px;
 }
 
 .myslides {
@@ -99,6 +113,110 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.img-holder {
+  width: 100%;
+  background-size: cover!important;
+  background-position: center center!important;
+  background-repeat: no-repeat!important;
+}
+// fonts
+@font-face {
+  font-family: "AvenirLTStd-Black";
+  src: url('../fonts/AvenirLTStd-Black.otf');
+}
+@font-face {
+  font-family: "AvenirLTStd-Heavy";
+  src: url('../fonts/AvenirLTStd-Heavy.otf');
+}
+@font-face {
+  font-family: "AvenirLTStd-Light";
+  src: url('../fonts/AvenirLTStd-Light.otf');
+}
+@font-face {
+  font-family: "AvenirLTStd-Medium";
+  src: url('../fonts/AvenirLTStd-Medium.otf');
+}
+@font-face {
+  font-family: "AvenirLTStd-Roman";
+  src: url('../fonts/AvenirLTStd-Roman.otf');
+}
+@font-face {
+  font-family: "djb";
+  src: url('../fonts/djb.ttf');
+}
+@font-face {
+  font-family: "JennaSue";
+  src: url('../fonts/JennaSue.ttf');
+}
+// end fonts
+// classes
+
+.avenir-black {
+  font-family: "AvenirLTStd-Black";
+}
+
+.avenir-heavy {
+  font-family: "AvenirLTStd-Heavy";
+}
+
+.avenir-light {
+  font-family: "AvenirLTStd-Light";
+}
+
+.avenir-medium {
+  font-family: "AvenirLTStd-Medium";
+}
+
+.avenir-roman {
+  font-family: "AvenirLTStd-Roman";
+}
+
+.djb-font {
+  font-family: "djb";
+}
+
+.jenna-font {
+  font-family: "JennaSue";
+}
+
+.color-white {
+  color: white;
+}
+
+.text-sec1 {
+  position: absolute;
+  padding: 20px;
+  top: 50%;
+  @include transform(translateY(-50%));
+
+  .dot-icon {
+    li {
+      position: relative;
+    }
+
+    li+li:before {
+      content: "\f111";
+      font-family: FontAwesome;
+      font-size: 6px;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: -6px;
+      @include transform(translateY(-50%));
+    }
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+.iphone-image img {
+  height: calc(100vh - 10vh);
+  padding-top: 40px;
+  margin-top: 50px;
 }
 /* Start writing sass here */
 @import "fancybox-override";
