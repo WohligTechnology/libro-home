@@ -23,7 +23,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       direction: 'vertical',
       slidesPerView: 1,
       paginationClickable: true,
-      spaceBetween: 30,
+      spaceBetween: 5,
       mousewheelControl: true
     });
   }, 500);
