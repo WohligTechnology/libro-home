@@ -76,7 +76,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       mousewheelForceToAxis: true,
       keyboardControl: true,
       parallax: true,
-      hashnav: true
+      hashnav: true,
+      paginationFractionRender: function(swiper, currentClassName, totalClassName) {
+        return '<span class="' + currentClassName + '"></span>' +
+          ' of ' +
+          '<span class="' + totalClassName + '"></span>';
+      }
     });
   }, 500);
 
