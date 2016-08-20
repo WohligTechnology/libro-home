@@ -5,56 +5,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
   console.log("Testing Consoles");
 
-  $scope.template = TemplateService.changecontent("home");
+  $scope.template = TemplateService.changecontent("home-hope");
   $scope.menutitle = NavigationService.makeactive("Home");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 
-  $scope.changePage = function(text) {
-    console.log(text);
-    var length = $(".fp-section").length;
-    console.log(length);
-    console.log($(".fp-section"));
-    if (length === 0) {
-      $('.fullpage').fullpage();
-    }
-    console.log(text);
-    $scope.homeval = text;
-    switch (text) {
-      case "contact":
-        $.fn.fullpage.moveTo(5);
-        break;
-      case "life2":
-        $.fn.fullpage.moveTo(4);
-        break;
-      case "life1":
-        $.fn.fullpage.moveTo(3);
-        break;
-      case "mylife":
-        $.fn.fullpage.moveTo(2);
-        break;
-      case "home":
-        $.fn.fullpage.moveTo(1);
-        break;
-      default:
-        $.fn.fullpage.moveTo(1);
-        break;
-    }
-  };
   setTimeout(function() {
-    $('.fullpage').fullpage({
-      //Navigation
-      lockAnchors: false,
-      navigation: true,
-      navigationPosition: 'right',
-      showActiveTooltip: false,
-      slidesNavigation: true,
-
-      afterRender: function() {
-        //playing the video
-        $('video').get(0).play();
-      }
-    });
+    // $('.fullpage').fullpage({
+    //   //Navigation
+    //   lockAnchors: false,
+    //   navigation: true,
+    //   navigationPosition: 'right',
+    //   showActiveTooltip: false,
+    //   slidesNavigation: true,
+    //
+    //   afterRender: function() {
+    //     //playing the video
+    //     $('video').get(0).play();
+    //   }
+    // });
 
 
     $scope.vidplay = function() {
@@ -66,7 +35,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         video.pause();
       }
     };
-    var swiper = new Swiper('.swiper-container', {
+    var swiper1 = new Swiper('.swiper1', {
       pagination: '.swiper-pagination',
       direction: 'vertical',
       slidesPerView: 1,
@@ -77,20 +46,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       keyboardControl: true,
       parallax: true,
       hashnav: true,
-      paginationFractionRender: function(swiper, currentClassName, totalClassName) {
-        return '<span class="' + currentClassName + '"></span>' +
-          ' of ' +
-          '<span class="' + totalClassName + '"></span>';
-      }
+
     });
+    var swiper2 = new Swiper('.swiper2', {
+      pagination: '.swiper-pagination',
+      direction: 'vertical',
+      slidesPerView: 1,
+      paginationClickable: true,
+      spaceBetween: 0,
+      mousewheelControl: true,
+      mousewheelForceToAxis: true,
+      keyboardControl: true,
+      parallax: true,
+      hashnav: true,
+
+    });
+    swiper2.params.control = swiper1;
+  swiper1.params.control = swiper2;
   }, 500);
 
-  $scope.$on('$viewContentLoaded', function() {
-    $timeout(function() {
-      $('body').addClass('fp-');
-      $scope.changePage($stateParams.id);
-    }, 1000);
-  });
+  // $scope.$on('$viewContentLoaded', function() {
+  //   $timeout(function() {
+  //     $('body').addClass('fp-');
+  //     $scope.changePage($stateParams.id);
+  //   }, 1000);
+  // });
 })
 
 .controller('LoginCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
