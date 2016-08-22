@@ -102,6 +102,10 @@ a {
   font-size: 22px;
 }
 
+.fnt-20 {
+  font-size: 20px;
+}
+
 .fnt-16 {
   font-size: 16px;
 }
@@ -122,6 +126,11 @@ a {
   background-color: rgba(0, 0, 0, 0.34);
   border-color: rgba(0, 0, 0, 0);
   padding: 0;
+
+  .logo-size {
+    height: 40px;
+    margin-top: 5px;
+  }
 }
 
 a {
@@ -143,8 +152,6 @@ a:focus {
   left: 0;
   bottom: 0;
   right: 0;
-  // background: #232c49;
-  @include opacity(0.5);
 
   &.colorblack {
     background: #000;
@@ -152,7 +159,26 @@ a:focus {
 
   &.colorblue {
     background: #232c49;
-    @include opacity(0.3);
+  }
+}
+
+.one {
+  .overlay {
+    opacity: 0.1;
+  }
+}
+
+.five,
+.three,
+.two {
+  .overlay {
+    opacity: 0.2;
+  }
+}
+
+.four {
+  .overlay {
+    opacity: 0.5;
   }
 }
 
@@ -517,7 +543,7 @@ a.color-white {
 
   .icon-bar {
     width: 25px;
-    height: 4px;
+    height: 3px;
     margin: 3px 0;
     background-color: #fff;
     @include transition(all 400ms ease-in-out);
@@ -682,7 +708,7 @@ a.color-white {
       width: 32px;
       vertical-align: middle;
       margin-top: -15px;
-      margin-right: 10px;
+      margin-right: 2px;
     }
   }
 }
@@ -773,15 +799,15 @@ a.color-white {
   //     content: 'Contact';
   //   }
   // }
-  .line-height {
-    line-height: 100%;
+  .line-height90 {
+    line-height: 90%;
   }
 
   .img-section1 {
     margin: 0 6px;
 
     img {
-      height: 22px;
+      height: 24px;
       vertical-align: inherit;
     }
   }
@@ -808,8 +834,12 @@ a.color-white {
 }
 
 .cycle-section3 {
-  height: 50px;
+  height: 42px;
   vertical-align: baseline;
+}
+
+.life-icon3 {
+  margin-left: -13px;
 }
 
 .person-section4 {
@@ -834,7 +864,7 @@ a.color-white {
 
   .social-icons {
     li {
-      width: 50px;
+      width: 14.6%;
       height: 50px;
       padding: 0;
       margin: -2.6px;
@@ -845,6 +875,44 @@ a.color-white {
         text-align: center;
         padding: 9px 0;
         font-size: 22px;
+
+        i {
+          @include transition(all ease 300ms);
+        }
+
+        &:hover {
+          i {
+            text-shadow: none;
+          }
+
+          .fa.fa-facebook {
+            color: #3b5998;
+          }
+
+          .fa.fa-twitter {
+            color: #00aced;
+          }
+
+          .fa.fa-google-plus {
+            color: #dd4b39;
+          }
+
+          .fa.fa-pinterest {
+            color: #cb2027;
+          }
+
+          .fa.fa-instagram {
+            color: #fb3958;
+          }
+
+          .fa.fa-linkedin {
+            color: #007bb6;
+          }
+
+          .fa.fa-youtube {
+            color: #bb0000;
+          }
+        }
       }
     }
   }
@@ -1049,10 +1117,11 @@ a.color-white {
 .fixed-mobile {
   position: fixed;
   top: 50%;
-  z-index: 2;
+  z-index: 9;
   left: 50%;
   @include transform(translate(-50%,-50%));
-  width: 100%;
+  width: 400px;
+  @include transition(all ease 300ms);
 }
 
 .forgot-pswd-form {
@@ -1144,28 +1213,35 @@ a.color-white {
   border-radius: 50%;
   text-align: center;
   padding: 4px 0;
-  top:42%;
+  top: 42%;
   @include transition(all ease 300ms);
 
   &:hover {
     border-color: darken(#fff,20%);
   }
 }
-.fullscreen-bg{
-    video {
-      position: absolute;
-      min-width: 100%;
-      min-height: 100%;
-      height: auto;
-      width: 100%;
-      top: 50%;
-      left: 50%;
-      @include transform(translate(-50%,-50%));
+
+.fullscreen-bg {
+  video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%,-50%));
+    z-index: -99;
   }
 }
-.description {
+
+.mb-30 {
   margin-bottom: 30px;
-  h4{
+}
+
+.description {
+  line-height: 150%;
+
+  h4 {
     text-transform: uppercase;
     margin: 0;
   }

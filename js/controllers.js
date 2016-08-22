@@ -1,3 +1,4 @@
+var swiper = {};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
@@ -49,7 +50,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       navigationPosition: 'right',
       showActiveTooltip: false,
       slidesNavigation: true,
-
+      onLeave: function(index, nextIndex, direction) {
+        swiper.slideTo(nextIndex - 1);
+        //playing the video
+        $('video').get(nextIndex - 1).play();
+        console.log(nextIndex - 1);
+      },
       afterRender: function() {
         //playing the video
         $('video').get(0).play();
@@ -62,19 +68,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       var button = document.getElementById("play");
       if (video.paused) {
         video.play();
-      } else {
-        video.pause();
       }
     };
-    var swiper = new Swiper('.swiper-container', {
+    swiper = new Swiper('.swiper-container', {
       pagination: '.swiper-pagination',
       direction: 'vertical',
       slidesPerView: 1,
       paginationClickable: true,
       spaceBetween: 0,
-      mousewheelControl: true,
-      mousewheelForceToAxis: true,
-      keyboardControl: true,
+      mousewheelControl: false,
+      mousewheelForceToAxis: false,
+      keyboardControl: false,
       parallax: true,
       hashnav: true
     });
