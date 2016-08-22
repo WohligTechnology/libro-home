@@ -1,15 +1,9 @@
 var adminURL = "";
-<<<<<<< HEAD
 if(isproduction)
 {
   adminURL =  "http://www.wohlig.co.in/demo/index.php";
 }
 else {
-=======
-if (isproduction) {
-  adminURL = "http://www.wohlig.co.in/demo/index.php";
-} else {
->>>>>>> origin/master
   adminURL = "http://localhost/demo/index.php";
 }
 
@@ -19,14 +13,6 @@ var navigationservice = angular.module('navigationservice', [])
   var navigation = [{
     name: "Home",
     classis: "active",
-<<<<<<< HEAD
-    anchor: "home",
-    subnav: [{
-      name: "Subnav1",
-      classis: "active",
-      anchor: "home"
-    }]
-=======
     disabled: true,
     anchor: "home",
   }, {
@@ -113,7 +99,6 @@ var navigationservice = angular.module('navigationservice', [])
       classis: "active",
       anchor: "home"
     }, ]
->>>>>>> origin/master
   }];
 
   return {

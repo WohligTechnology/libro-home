@@ -6,12 +6,8 @@ var firstapp = angular.module('firstapp', [
   'navigationservice',
   'pascalprecht.translate',
   'angulartics',
-<<<<<<< HEAD
-  'angulartics.google.analytics'
-=======
   'angulartics.google.analytics',
   'ksSwiper'
->>>>>>> origin/master
 ]);
 
 firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
@@ -22,8 +18,6 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
       url: "/",
       templateUrl: "views/template.html",
       controller: 'HomeCtrl'
-<<<<<<< HEAD
-=======
     })
     .state('mylife', {
       url: "/mylife",
@@ -57,7 +51,6 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
       url: "/login",
       templateUrl: "views/template.html",
       controller: 'LoginCtrl'
->>>>>>> origin/master
     });
   $urlRouterProvider.otherwise("/");
   $locationProvider.html5Mode(isproduction);
@@ -130,8 +123,6 @@ firstapp.directive('autoHeight', function($compile, $parse) {
     }
   };
 });
-<<<<<<< HEAD
-=======
 firstapp.directive('scroll', function($window) {
   return {
     restrict: 'EA',
@@ -152,4 +143,3 @@ firstapp.directive('scroll', function($window) {
     }
   };
 });
->>>>>>> origin/master
