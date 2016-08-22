@@ -6,7 +6,12 @@ var firstapp = angular.module('firstapp', [
   'navigationservice',
   'pascalprecht.translate',
   'angulartics',
+<<<<<<< HEAD
   'angulartics.google.analytics'
+=======
+  'angulartics.google.analytics',
+  'ksSwiper'
+>>>>>>> origin/master
 ]);
 
 firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
@@ -17,6 +22,42 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
       url: "/",
       templateUrl: "views/template.html",
       controller: 'HomeCtrl'
+<<<<<<< HEAD
+=======
+    })
+    .state('mylife', {
+      url: "/mylife",
+      templateUrl: "views/template.html",
+      controller: 'HomeCtrl',
+      params: {
+        'id': 'contact',
+      }
+    })
+    .state('forgot-password', {
+      url: "/forgot-password",
+      templateUrl: "views/template.html",
+      controller: 'ForgotPasswordCtrl'
+    })
+    .state('forgot-password-email', {
+      url: "/forgot-password-email",
+      templateUrl: "views/template.html",
+      controller: 'ForgotPasswordEmailCtrl'
+    })
+    .state('contact', {
+      url: "/contact",
+      templateUrl: "views/template.html",
+      controller: 'ContactCtrl'
+    })
+    .state('advertise', {
+      url: "/advertise",
+      templateUrl: "views/template.html",
+      controller: 'AdvertiseCtrl'
+    })
+    .state('login', {
+      url: "/login",
+      templateUrl: "views/template.html",
+      controller: 'LoginCtrl'
+>>>>>>> origin/master
     });
   $urlRouterProvider.otherwise("/");
   $locationProvider.html5Mode(isproduction);
@@ -89,3 +130,26 @@ firstapp.directive('autoHeight', function($compile, $parse) {
     }
   };
 });
+<<<<<<< HEAD
+=======
+firstapp.directive('scroll', function($window) {
+  return {
+    restrict: 'EA',
+    replace: false,
+    link: function($scope, element, attrs) {
+      var $element = $(element);
+      var divslide5 = $('#slide5')[0].scrollHeight;
+      var winTop = $(window).scrollTop();
+      console.log(winTop);
+      console.log(divslide5);
+      angular.element($window).bind("scroll", function() {
+        console.log(divslide5 - 1);
+        if (winTop > divslide5) {
+          scope.active = true;
+          console.log("all done");
+        }
+      });
+    }
+  };
+});
+>>>>>>> origin/master

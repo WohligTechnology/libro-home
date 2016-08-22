@@ -1,9 +1,15 @@
 var adminURL = "";
+<<<<<<< HEAD
 if(isproduction)
 {
   adminURL =  "http://www.wohlig.co.in/demo/index.php";
 }
 else {
+=======
+if (isproduction) {
+  adminURL = "http://www.wohlig.co.in/demo/index.php";
+} else {
+>>>>>>> origin/master
   adminURL = "http://localhost/demo/index.php";
 }
 
@@ -13,12 +19,101 @@ var navigationservice = angular.module('navigationservice', [])
   var navigation = [{
     name: "Home",
     classis: "active",
+<<<<<<< HEAD
     anchor: "home",
     subnav: [{
       name: "Subnav1",
       classis: "active",
       anchor: "home"
     }]
+=======
+    disabled: true,
+    anchor: "home",
+  }, {
+    name: "Destination",
+    classis: "active",
+    disabled: true,
+    anchor: "home",
+  }, {
+    name: "Popular Journeys",
+    classis: "active",
+    disabled: true,
+    anchor: "home",
+  }, {
+    name: "Popular Bloggers",
+    classis: "active",
+    disabled: true,
+    anchor: "home",
+  }, {
+    name: "Popular Agents",
+    classis: "active",
+    disabled: true,
+    anchor: "home",
+  }, {
+    name: "Bookings",
+    classis: "active",
+    disabled: false,
+    anchor: "home",
+    subnav: [{
+      name: "Flights",
+      classis: "active",
+      anchor: "home"
+    }, {
+      name: "Hotels",
+      classis: "active",
+      anchor: "home"
+    }, {
+      name: "Vacation Rentals",
+      classis: "active",
+      anchor: "home"
+    }, {
+      name: "Homestays",
+      classis: "active",
+      anchor: "home"
+    }, {
+      name: "Car Rentals",
+      classis: "active",
+      anchor: "home"
+    }, {
+      name: "Tours & Excursions",
+      classis: "active",
+      anchor: "home"
+    }, {
+      name: "Parking Space",
+      classis: "active",
+      anchor: "home"
+    }, ]
+  }, {
+    name: "Blogs",
+    classis: "active",
+    disabled: true,
+    anchor: "home",
+  }, {
+    name: "About Us",
+    classis: "active",
+    disabled: false,
+    anchor: "home",
+    subnav: [{
+      name: "About TraveLibro",
+      classis: "active",
+      anchor: "home"
+    }, {
+      name: "Advertise With Us",
+      classis: "active",
+      anchor: "home"
+    }, {
+      name: "Contact Us",
+      classis: "active",
+      anchor: "home",
+      params: {
+        'id': 'contact',
+      }
+    }, {
+      name: "Terms & Conditions",
+      classis: "active",
+      anchor: "home"
+    }, ]
+>>>>>>> origin/master
   }];
 
   return {
