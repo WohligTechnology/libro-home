@@ -12,10 +12,7 @@ $brand-success: #ff6759 !default;
 $brand-warning: #ffec39 !default;
 $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
-<<<<<<< HEAD
-=======
 $brand-menu: #2b2d2f !default;
->>>>>>> origin/master
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @font-face {
   font-family: "Facile Sans";
@@ -39,8 +36,6 @@ html {
   z-index: 2;
 }
 
-<<<<<<< HEAD
-=======
 body * {
   @extend .text-shadow;
 }
@@ -52,7 +47,6 @@ body.fp-.fp-viewing-4 {
   }
 }
 
->>>>>>> origin/master
 .footer {
   bottom: 0;
 }
@@ -73,13 +67,6 @@ img.doneLoading {
   opacity: 1;
 }
 
-<<<<<<< HEAD
-nav li:hover .dropdown-menu {
-  display: block;
-}
-
-=======
->>>>>>> origin/master
 .btn,
 a {
   cursor: pointer;
@@ -107,10 +94,6 @@ a {
   text-transform: uppercase;
 }
 
-<<<<<<< HEAD
-.fnt-28 {
-  font-size: 28px;
-=======
 .fnt-32 {
   font-size: 32px;
 }
@@ -121,15 +104,12 @@ a {
 
 .fnt-16 {
   font-size: 16px;
->>>>>>> origin/master
 }
 
 .fnt-60 {
   font-size: 60px;
 }
 
-<<<<<<< HEAD
-=======
 .pt70 {
   padding-top: 70px;
 }
@@ -157,17 +137,12 @@ a:focus {
   outline-offset: 0;
 }
 
->>>>>>> origin/master
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-<<<<<<< HEAD
-  background: #232c49;
-  @include opacity(0.3);
-=======
   // background: #232c49;
   @include opacity(0.5);
 
@@ -179,15 +154,10 @@ a:focus {
     background: #232c49;
     @include opacity(0.3);
   }
->>>>>>> origin/master
 }
 
 .myslides {
   background: #eee;
-<<<<<<< HEAD
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-=======
->>>>>>> origin/master
   font-size: 14px;
   color: #000;
   margin: 0;
@@ -197,11 +167,7 @@ a:focus {
 }
 
 .nav-header {
-<<<<<<< HEAD
-  padding: 10px 0;
-=======
   padding: 20px 0;
->>>>>>> origin/master
 }
 
 .swiper-container {
@@ -209,13 +175,10 @@ a:focus {
   height: 100%;
 }
 
-<<<<<<< HEAD
-=======
 .ptb20 {
   padding: 20px 0;
 }
 
->>>>>>> origin/master
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -223,9 +186,6 @@ a:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
-=======
-  height: 100vh !important;
 }
 
 .login-bg {
@@ -254,7 +214,6 @@ a:focus {
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.5);
->>>>>>> origin/master
 }
 
 .img-holder {
@@ -297,48 +256,30 @@ a:focus {
 
 .avenir-black {
   font-family: "AvenirLTStd-Black";
-<<<<<<< HEAD
-=======
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
->>>>>>> origin/master
 }
 
 .avenir-heavy {
   font-family: "AvenirLTStd-Heavy";
-<<<<<<< HEAD
-=======
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
->>>>>>> origin/master
 }
 
 .avenir-light {
   font-family: "AvenirLTStd-Light";
-<<<<<<< HEAD
-=======
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
->>>>>>> origin/master
 }
 
 .avenir-medium {
   font-family: "AvenirLTStd-Medium";
-<<<<<<< HEAD
-=======
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
->>>>>>> origin/master
 }
 
 .avenir-roman {
   font-family: "AvenirLTStd-Roman";
-<<<<<<< HEAD
-}
-
-p {
-  font-size: 14px;
-=======
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -371,7 +312,6 @@ p {
 
 .login-ht {
   height: calc(100vh - 70px);
->>>>>>> origin/master
 }
 
 .djb-font {
@@ -386,8 +326,6 @@ p {
   color: white;
 }
 
-<<<<<<< HEAD
-=======
 a.color-white {
   color: white;
   @include transition(all ease 300ms);
@@ -401,20 +339,10 @@ a.color-white {
   min-height: 400px;
 }
 
->>>>>>> origin/master
 .color-primary {
   color: $brand-success;
 }
 
-<<<<<<< HEAD
-.text-sec1 {
-  width: 40%;
-  position: absolute;
-  padding: 10px;
-  top: 50%;
-  left: 20px;
-  @include transform(translateY(-50%));
-=======
 .mlr20 {
   margin: 0 20px;
 }
@@ -687,7 +615,6 @@ a.color-white {
   .text-color3 {
     color: #11d3cb;
   }
->>>>>>> origin/master
 
   .dot-icon {
     li {
@@ -700,11 +627,7 @@ a.color-white {
       font-size: 6px;
       display: inline-block;
       position: absolute;
-<<<<<<< HEAD
-      top: 50%;
-=======
       top: 43%;
->>>>>>> origin/master
       left: -6px;
       @include transform(translateY(-50%));
     }
@@ -714,30 +637,6 @@ a.color-white {
 .text-right {
   text-align: right;
 }
-<<<<<<< HEAD
-// slide1
-
-.mobile-video {
-  position: relative;
-  padding-top: 40px;
-  width: 340px;
-  margin: 70px auto 0;
-
-  .videoplay {
-    padding-top: 40px;
-    width: 250px;
-    margin: 70px auto 0;
-    position: absolute;
-    top: 18px;
-    left: 50%;
-    @include transform(translateX(-50%));
-  }
-
-  iframe {
-    width: 100%;
-    height: 448px;
-  }
-=======
 
 .text-shadow {
   text-shadow: 1px 1px 2px #444444;
@@ -768,7 +667,6 @@ a.color-white {
   padding-top: 40px;
   width: 320px;
   margin: 20px auto 0;
->>>>>>> origin/master
 
   .iphone-image {
     img {
@@ -803,12 +701,6 @@ a.color-white {
 .text-sec2 {
   position: absolute;
   top: 50%;
-<<<<<<< HEAD
-  width: 250px;
-  right: 90px;
-  @include transform(translateY(-50%));
-}
-=======
   width: 300px;
   right: 11%;
   @include transform(translateY(-50%));
@@ -1258,5 +1150,4 @@ a.color-white {
     border-color: darken(#fff,20%);
   }
 }
->>>>>>> origin/master
 @import "fancybox-override";
