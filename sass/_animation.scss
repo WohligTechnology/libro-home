@@ -1,0 +1,14 @@
+.fp-viewing-1 {
+  .description {
+    @include fadeIn(opacity 1.0s ease-in, opacity 2.0s ease)
+  }
+}
+@include keyframes(fadeIn) {
+  from {
+    @include opacity(0);
+  }
+
+  to {
+    @include opacity(1);
+  }
+}
