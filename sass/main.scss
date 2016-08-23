@@ -162,6 +162,10 @@ a:focus {
   }
 }
 
+.section {
+  height: 100vh !important;
+}
+
 .one {
   .overlay {
     opacity: 0.1;
@@ -678,21 +682,19 @@ a.color-white {
   height: 100%;
   margin: 0 auto;
   position: absolute;
-  top: 59%;
+  top: 50%;
   left: 50%;
   @include transform(translate(-50%,-50%));
 
   video {
     width: 100%;
-    height: 360px;
+    height: 100%;
   }
 }
 
 .mobile-video {
   position: relative;
-  padding-top: 40px;
   width: 275px;
-  margin: 20px auto 0;
 
   .iphone-image {
     img {
@@ -713,15 +715,115 @@ a.color-white {
   }
 }
 
-.swiper-pagination-bullet {
-  background: transparent;
-  opacity: 1;
-  border: 1px solid #fff;
+.fp-viewing-0 {
+  .navigation-dots .one {
+    background: #fff;
+  }
 }
 
-.swiper-pagination-bullet-active {
-  opacity: 1;
-  background: white;
+.fp-viewing-1 {
+  .navigation-dots .two {
+    background: #fff;
+  }
+}
+
+.fp-viewing-2 {
+  .navigation-dots .three {
+    background: #fff;
+  }
+}
+
+.fp-viewing-3 {
+  .navigation-dots .four {
+    background: #fff;
+  }
+}
+
+.fp-viewing-4 {
+  .navigation-dots .five {
+    background: #fff;
+  }
+}
+
+.navigation-dots {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  @include transform(translateY(-50%));
+
+  span {
+    height: 10px;
+    width: 10px;
+    border: 2px solid #fff;
+    display: block;
+    margin: 30px 0;
+    border-radius: 50%;
+    @include transition(all ease 300ms);
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      background: #fff;
+    }
+
+    &::after,
+    &::before {
+      opacity: 0;
+      @include transition(all ease 300ms);
+    }
+
+    &:hover:after,
+    &:hover:before {
+      opacity: 1;
+    }
+  }
+
+  span:nth-child(1)::before,
+  span:nth-child(2)::before,
+  span:nth-child(3)::before,
+  span:nth-child(4)::before,
+  span:nth-child(5)::before {
+    color: white;
+    background: #2c3757;
+    position: absolute;
+    left: -90px;
+    width: 75px;
+    top: -10px;
+    line-height: 1;
+    padding: 6px;
+    @include transition(all ease 300ms);
+  }
+
+  span::after {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: -10px;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 10px solid #2c3757;
+    @include transition(all ease 300ms);
+  }
+
+  span:nth-child(1)::before {
+    content: 'Home';
+  }
+
+  span:nth-child(2)::before {
+    content: 'Travel Life';
+  }
+
+  span:nth-child(3)::before {
+    content: 'Local Life';
+  }
+
+  span:nth-child(4)::before {
+    content: 'My Life';
+  }
+
+  span:nth-child(5)::before {
+    content: 'Contact';
+  }
 }
 
 .text-sec2 {
@@ -933,6 +1035,7 @@ a.color-white {
 
 .menu-contact {
   bottom: 0;
+  left: 20px;
 
   ul li a {
     font-size: 14px;
@@ -1120,7 +1223,7 @@ a.color-white {
   z-index: 9;
   left: 50%;
   @include transform(translate(-50%,-50%));
-  width: 400px;
+  width: 275px;
   @include transition(all ease 300ms);
 }
 
@@ -1192,12 +1295,12 @@ a.color-white {
 
 .slide-video {
   position: absolute;
-  width: 100%;
   margin: 0 auto;
-  height: 430px;
+  width: 215px;
+  height: 375px;
   z-index: 2;
   left: 50%;
-  top: 52.3%;
+  top: 47%;
   @include transform(translate(-50%,-50%));
 
   .swiper-slide {
@@ -1213,7 +1316,7 @@ a.color-white {
   border-radius: 50%;
   text-align: center;
   padding: 4px 0;
-  top: 42%;
+  top: 50%;
   @include transition(all ease 300ms);
 
   &:hover {

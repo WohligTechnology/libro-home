@@ -11,6 +11,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
 
+  $scope.section = {
+    one: "views/section/mainhome.html",
+    two: "views/section/travellife.html",
+    three: "views/section/locallife.html",
+    four: "views/section/mylife.html",
+    five: "views/section/contact.html",
+  };
   $scope.changePage = function(text) {
     console.log(text);
     var length = $(".fp-section").length;
@@ -25,13 +32,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       case "contact":
         $.fn.fullpage.moveTo(5);
         break;
-      case "life2":
+      case "mylife":
         $.fn.fullpage.moveTo(4);
         break;
-      case "life1":
+      case "locallife":
         $.fn.fullpage.moveTo(3);
         break;
-      case "mylife":
+      case "travellife":
         $.fn.fullpage.moveTo(2);
         break;
       case "home":
@@ -45,11 +52,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   setTimeout(function() {
     $('.fullpage').fullpage({
       //Navigation
-      lockAnchors: false,
-      navigation: true,
-      navigationPosition: 'right',
-      showActiveTooltip: false,
-      slidesNavigation: true,
       onLeave: function(index, nextIndex, direction) {
         swiper.slideTo(nextIndex - 1);
         //playing the video
@@ -102,6 +104,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.animationsEnabled = true;
+    if (typeof $.fn.fullpage.destroy == 'function') {
+      $.fn.fullpage.destroy('all');
+    }
+
 
     $scope.openalreadyexist = function(size) {
       $uibModal.open({
@@ -127,6 +133,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.animationsEnabled = true;
     $scope.template.header = "";
     $scope.template.footer = "";
+    if (typeof $.fn.fullpage.destroy == 'function') {
+      $.fn.fullpage.destroy('all');
+    }
+
     $scope.opensucessfull = function(size) {
       $uibModal.open({
         animation: true,
@@ -151,6 +161,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.animationsEnabled = true;
     $scope.template.header = "";
     $scope.template.footer = "";
+    if (typeof $.fn.fullpage.destroy == 'function') {
+      $.fn.fullpage.destroy('all');
+    }
+
 
   })
   .controller('ContactCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
@@ -165,6 +179,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.animationsEnabled = true;
     $scope.template.header = "";
     $scope.template.footer = "";
+    if (typeof $.fn.fullpage.destroy == 'function') {
+      $.fn.fullpage.destroy('all');
+    }
+
 
   })
   .controller('AdvertiseCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
@@ -179,6 +197,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.animationsEnabled = true;
     $scope.template.header = "";
     $scope.template.footer = "";
+    if (typeof $.fn.fullpage.destroy == 'function') {
+      $.fn.fullpage.destroy('all');
+    }
+
 
   })
 

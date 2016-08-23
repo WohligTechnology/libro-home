@@ -116,8 +116,11 @@ firstapp.directive('autoHeight', function($compile, $parse) {
     link: function($scope, element, attrs) {
       var $element = $(element);
       var windowHeight = $(window).height();
+      var windowHeight2 = windowHeight + 20;
+      console.log("windowHeight2");
+      console.log(windowHeight2);
       var addHeight = function() {
-        $element.css("height", windowHeight);
+        $element.css("height", windowHeight2);
       };
       addHeight();
     }
