@@ -33,7 +33,8 @@
         "angulartics-google-analytics": "^0.1.4",
         "angular-swiper": "^0.4.0",
         "fullpage.js": "^2.7.8",
-        "smart-app-banner": "https://github.com/kudago/smart-app-banner.git"
+        "smart-app-banner": "https://github.com/kudago/smart-app-banner.git",
+        "parallax": "https://github.com/wagerfield/parallax.git#~2.1.3"
     },
     "devDependencies": {
         "angular-translate": "^2.11.0"

@@ -633,7 +633,7 @@ a.color-white {
   padding: 10px;
   top: 50%;
   left: 20.5%;
-  @include transform(translate(-50% , -20.5%));
+  @include transform(translate(-50% , -50%));
 
   &.text-sec-left {
     width: 300px;
@@ -786,8 +786,8 @@ a.color-white {
     color: white;
     background: #2c3757;
     position: absolute;
-    left: -90px;
-    width: 75px;
+    left: -100px;
+    width: 85px;
     top: -10px;
     line-height: 1;
     padding: 6px;
@@ -1337,8 +1337,8 @@ a.color-white {
   }
 }
 
-.mb-30 {
-  margin-bottom: 30px;
+.mb-40 {
+  margin-bottom: 40px;
 }
 
 .description {

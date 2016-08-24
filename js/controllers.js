@@ -50,11 +50,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
   };
   setTimeout(function() {
+    $('.scene').parallax();
     $('.fullpage').fullpage({
       //Navigation
       onLeave: function(index, nextIndex, direction) {
         swiper.slideTo(nextIndex - 1);
         //playing the video
+
+        $('video').get(nextIndex - 1).load();
         $('video').get(nextIndex - 1).play();
         console.log(nextIndex - 1);
       },
