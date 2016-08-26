@@ -16,7 +16,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         two: "views/section/travellife.html",
         three: "views/section/locallife.html",
         four: "views/section/mylife.html",
-        five: "views/section/contact.html",
+        five: "views/section/share.html",
     };
     $scope.changePage = function(text) {
         console.log(text);
@@ -29,7 +29,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         console.log(text);
         $scope.homeval = text;
         switch (text) {
-            case "contact":
+            case "share":
                 $.fn.fullpage.moveTo(5);
                 break;
             case "mylife":
