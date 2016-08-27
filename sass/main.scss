@@ -686,23 +686,24 @@ a.color-white {
         color: white;
         background: #2c3757;
         position: absolute;
-        left: -100px;
-        width: 85px;
+        left: -110px;
+        width: 90px;
         top: -10px;
         line-height: 1;
         padding: 6.8px;
         text-transform: uppercase;
+        text-align: center;
         font-size: 12px;
         @include transition(all ease 300ms);
     }
     span::after {
         content: '';
         position: absolute;
-        left: -15px;
+        left: -20px;
         top: -10px;
         border-top: 13px solid transparent;
         border-bottom: 13px solid transparent;
-        border-left: 10px solid #2c3757;
+        border-left: 13px solid #2c3757;
         @include transition(all ease 300ms);
     }
     span:nth-child(1)::before {
@@ -1154,8 +1155,8 @@ a.color-white {
 .mb-40 {
     margin-bottom: 40px;
 }
-.mt25{
-  margin-top: 25px;
+.mt25 {
+    margin-top: 25px;
 }
 .description {
     line-height: 150%;
