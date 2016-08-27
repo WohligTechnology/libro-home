@@ -289,7 +289,8 @@ p {
     width: 100vh;
 }
 .login-ht {
-    height: calc(100vh - 70px);
+    height: calc(100vh - 100px);
+    position: relative;
 }
 .djb-font {
     font-family: "djb";
