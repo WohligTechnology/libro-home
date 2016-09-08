@@ -188,6 +188,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })
+
+.controller('BookingCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
+        //Used to name the .html file
+
+        console.log("Testing Consoles");
+
+        $scope.template = TemplateService.changecontent("booking");
+        $scope.menutitle = NavigationService.makeactive("Booking");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+        $scope.animationsEnabled = true;
+        $scope.template.header = "";
+        $scope.template.footer = "";
+        if (typeof $.fn.fullpage.destroy == 'function') {
+            $.fn.fullpage.destroy('all');
+        }
+
+
+    })
     .controller('AdvertiseCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
         //Used to name the .html file
 
