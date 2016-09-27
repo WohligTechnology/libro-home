@@ -1,4 +1,5 @@
 var swiper = {};
+var userData = {};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams) {
@@ -19,14 +20,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         five: "views/section/share.html",
     };
     $scope.changePage = function(text) {
-        console.log(text);
+       // console.log(text);
         var length = $(".fp-section").length;
-        console.log(length);
-        console.log($(".fp-section"));
+       // console.log(length);
+       // console.log($(".fp-section"));
         if (length === 0) {
             $('.fullpage').fullpage();
         }
-        console.log(text);
+        //console.log(text);
         $scope.homeval = text;
         switch (text) {
             case "share":
@@ -61,7 +62,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
                     $('video').get(nextIndex - 1).load();
                     $('video').get(nextIndex - 1).play();
-                    console.log(nextIndex - 1);
+                   // console.log(nextIndex - 1);
                 }, 0);
 
             }
@@ -97,38 +98,86 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
 })
 
-.controller('LoginCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
+.controller('LoginCtrl', function($scope, TemplateService, NavigationService, $interval, $state, $timeout, $uibModal,$rootScope) {
         //Used to name the .html file
 
-        console.log("Testing Consoles");
-
-        $scope.template = TemplateService.changecontent("login");
-        $scope.menutitle = NavigationService.makeactive("Login");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
-        $scope.animationsEnabled = true;
-        if (typeof $.fn.fullpage.destroy == 'function') {
-            $.fn.fullpage.destroy('all');
+    console.log("Testing Consoles");
+    $scope.template = TemplateService.changecontent("login");
+    $scope.menutitle = NavigationService.makeactive("Login");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.animationsEnabled = true;
+    if (typeof $.fn.fullpage.destroy == 'function') {
+        $.fn.fullpage.destroy('all');
+    }
+    $scope.openalreadyexist = function(size) {
+        $uibModal.open({
+            animation: true,
+            templateUrl: 'views/modal/alreadyexist.html',
+            controller: 'LoginCtrl',
+            scope: $scope,
+            windowClass: "notexist",
+            size: "sm"
+        });
+    }; 
+    var checktwitter = function(data, status) {
+       
+        var repdata = {};
+       // console.log(data);
+        if (data._id) {
+            $interval.cancel(stopinterval);
+            ref.close();
+            $.jStorage.set("isLoggedIn","true");
+            userData = data;
+            $state.go('home');
+           //$rootScope.isLoggedIn = true;
+            // NavigationService.saveUser(data.data);
+        } else {
+              
         }
-
-
-        $scope.openalreadyexist = function(size) {
-            $uibModal.open({
-                animation: true,
-                templateUrl: 'views/modal/alreadyexist.html',
-                controller: 'LoginCtrl',
-                scope: $scope,
-                windowClass: "notexist",
-                size: "sm"
+    };
+    var callAtIntervaltwitter = function() {
+        NavigationService.getProfile(checktwitter, function(err) {
+            $scope.template.getProfile();
+            console.log(err);
+        });
+    };
+    var authenticatesuccess = function(data, status) {
+        console.log("authenticate successful"); 
+        $ionicLoading.hide();
+        if (data._id) {
+            // $scope.closeAllModals();
+             //$scope.isLoggedIn = true;
+             
+            // NavigationService.saveUser(data.data);
+        }
+    };
+    $scope.socialLogin = function(loginTo){
+        // console.log(loginTo);
+        ref = window.open(adminURL + "/user/"+loginTo, '_blank', 'location=no');
+        stopinterval = $interval(callAtIntervaltwitter, 2000);
+        ref.addEventListener('closed', function(event) {
+            NavigationService.getProfile(authenticatesuccess, function(err) {
+                console.log(err);
             });
-        };
+            $interval.cancel(stopinterval);
+        });
+    };
+    // var getUserDetails = function(){
+    //     NavigationService.getProfile(function(data,status){
+    //         $rootScope.data = data;
+    //     },
+    //     function(err){
+    //         console.log(err);
+    //     });
+    // }
+    // stopinterval = $interval(getUserDetails, 2000);
+    
+})
 
-    })
     .controller('ForgotPasswordCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
         //Used to name the .html file
-
-        console.log("Testing Consoles");
-
+       // console.log("Testing Consoles");
         $scope.template = TemplateService.changecontent("forgot-password");
         $scope.menutitle = NavigationService.makeactive("Login");
         TemplateService.title = $scope.menutitle;
@@ -150,8 +199,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 size: "sm"
             });
         };
-
     })
+
     .controller('ForgotPasswordEmailCtrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal) {
         //Used to name the .html file
 
@@ -226,7 +275,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     })
 
-.controller('headerctrl', function($scope, TemplateService) {
+.controller('headerctrl', function($scope, TemplateService,NavigationService, $state, $interval) {
     $scope.template = TemplateService;
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         $(window).scrollTop(0);
@@ -253,6 +302,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.opensearch = function() {
         $scope.isopen = !$scope.isopen;
     };
+    $scope.isLoggedIn = $.jStorage.get("isLoggedIn");
+
+      $scope.logout = function(){
+          NavigationService.logout(function(){
+          $.jStorage.flush();
+          $scope.isLoggedIn = $.jStorage.get("isLoggedIn");
+          $state.go('home');
+        },
+        function(err) {
+            console.log(err);
+        });
+      };
+    $scope.data = userData;
+     
 })
 
 .controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {

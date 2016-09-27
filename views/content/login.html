@@ -37,9 +37,10 @@
                                                         <input type="password" class="form-control color-white" placeholder="Password">
                                                     </div>
                                                     <div class="forgot-link pt10 text-right">
-                                                        <a ng-click="openforgot()" class="color-white avenir-roman">Forgot Password?</a>
+                                                        <!--<a ng-click="openforgot()" class="color-white avenir-roman">Forgot Password?</a>-->
+                                                        <a ui-sref="forgot-password-email" class="color-white avenir-roman">Forgot Password?</a>
                                                     </div>
-                                                </div>
+                                                </div>  
                                                 <div class="btn-login">
                                                     <button class="btn btn-outline color-white avenir-roman">
                                                         Login
@@ -51,16 +52,16 @@
                                             <ul class="unstyled-list list-inline color-white avenir-roman">
                                                 <li>Or Login Via</li>
                                                 <li class="login-social-img">
-                                                    <a ng-click="openalreadyexist()"><img src="img/facebook.png" alt="Travelibro"></a>
+                                                    <a ng-click="openalreadyexist()"><img src="img/facebook.png" alt="Travelibro" ng-click="socialLogin('loginFacebook')"></a>
                                                 </li>
                                                 <li class="login-social-img">
-                                                    <a ng-click="openalreadyexist()"><img src="img/twitter.png" alt="Travelibro"></a>
+                                                    <a ng-click="openalreadyexist()"><img src="img/twitter.png" alt="Travelibro" ng-click="socialLogin('loginTwitter')"></a>
                                                 </li>
                                                 <li class="login-social-img">
-                                                    <a ng-click="openalreadyexist()"><img src="img/instagram.png" alt="Travelibro"></a>
+                                                    <a ng-click="openalreadyexist()"><img src="img/instagram.png" alt="Travelibro" ng-click="socialLogin('loginInstagram')"></a>
                                                 </li>
                                                 <li class="login-social-img">
-                                                    <a ng-click="openalreadyexist()"><img src="img/google.png" alt="Travelibro"></a>
+                                                    <a ng-click="openalreadyexist()"><img src="img/google.png" alt="Travelibro" ng-click="socialLogin('loginGoogle')"></a>
                                                 </li>
                                             </ul>
                                         </div>

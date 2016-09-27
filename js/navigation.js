@@ -4,12 +4,12 @@ if(isproduction)
   adminURL =  "http://www.wohlig.co.in/demo/index.php";
 }
 else {
-  adminURL = "http://localhost/demo/index.php";
+  adminURL = "http://travelibro.com/api";
 }
 
 var navigationservice = angular.module('navigationservice', [])
 
-.factory('NavigationService', function() {
+.factory('NavigationService', function($http) {
   var navigation = [{
     name: "Home",
     classis: "active",
@@ -115,6 +115,22 @@ var navigationservice = angular.module('navigationservice', [])
       }
       return menuname;
     },
+    getProfile: function(callback, errCallback) {
+            return $http({
+                url: adminURL + "/user/profile",
+                method: "POST"
+            }).success(function() {
+              $.jStorage.set("profile",data.data);
+              callback(data);
+            }).error(errCallback);
+    },
+    logout: function(callback,errCallback){
+      return $http({
+        url: adminURL + "/user/logout",
+        method:"POST"
+      }).success(callback).error(errCallback);
+    },
+
 
   };
 });

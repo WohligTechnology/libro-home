@@ -17,6 +17,10 @@ templateservicemod.service('TemplateService', function() {
     this.footer = "views/footer.html";
   };
 
+  this.getProfile = function() {
+    this.profile = $.jStorage.get("profile");
+  };
+
   this.changecontent = function(page) {
     this.init();
     var data = this;
